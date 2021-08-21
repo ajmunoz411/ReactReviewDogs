@@ -1,27 +1,22 @@
 import React from 'react';
+import FavoritesEntry from './FavoritesEntry';
 
-{/* <div class="fav-cont">
-  <h3 class="title">Favorites List</h3>
-  <div class="fav-list">
-
-    <div class="fav-entry">
-      <h3>Favorite Dog 1 Photo</h3>
-      <div class="fav-photo">
-        <img src=Favorite Dog 1 Photo Url/>
+const Favorites = (props) => {
+  return (props.favorites.length > 0) ?
+  (
+    <div className="fav-cont">
+      <h3 className="title">Favorites List</h3>
+      <div className="fav-list">
+        {props.favorites.map(dog => (
+          <FavoritesEntry dog={dog} key={dog.id} handleRemoveClick={props.handleRemoveClick}/>
+        ))}
       </div>
-      <button>Remove from Favorites</button>
     </div>
+  )
+  :
+  (
+    <div>No dogs added to favorites</div>
+  )
+};
 
-    <div class="fav-entry">
-      <h3>Favorite Dog 2 Photo</h3>
-      <div class="fav-photo">
-        <img src=Favorite Dog 2 Photo Url/>
-      </div>
-      <button>Remove from Favorites</button>
-    </div>
-
-    ....etc.....
-
-  </div>
-</div> */}
-
+export default Favorites;
