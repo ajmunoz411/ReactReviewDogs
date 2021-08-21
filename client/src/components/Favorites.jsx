@@ -15,7 +15,7 @@ const Favorites = (props) => {
   )
   :
   (
-    <div>No dogs added to favorites</div>
+    <div className="title">No dogs added to favorites</div>
   )
 };
 
